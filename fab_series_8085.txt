@@ -1,0 +1,16 @@
+lxi h,0000h
+mvi c,08h
+mvi b,00
+mvi d,01
+mov m,b
+inx h
+mov m,d
+l1: mov a,b
+add d
+mov b,d
+mov d,a
+inx h
+mov m,a
+dcr c
+jnz l1
+hlt

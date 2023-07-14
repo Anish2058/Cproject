@@ -1,0 +1,13 @@
+mvi a,12
+mov c,a
+mvi a,00
+mvi e,00 
+l1: mov d,c
+l2: add c
+jnc l3
+inr e
+l3: dcr d
+jnz l2
+dcr c
+jnz l1
+hlt

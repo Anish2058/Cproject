@@ -1,0 +1,23 @@
+mvi a,5h
+mvi c,00h
+mov e,a
+mov b,a
+l1: mov d,e
+l2: cmp d
+jc l3
+sub d
+jnz l2
+l3: cpi 00h
+jnz l4
+inr c
+l4: mov a,b
+dcr e
+jnz l1
+mov a,c
+mvi c,00h
+cpi 02h
+jnz l5
+inr c
+l5: mov a,c
+sta 0002h
+hlt

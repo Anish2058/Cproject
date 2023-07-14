@@ -1,0 +1,24 @@
+lxi h,5
+mvi e,00h
+mov d,h
+mov e,l
+lxi h,0000
+l2: mov b,d
+mov c,e
+l1: dad d
+dcx b
+mov a,c
+cpi 00
+jnz l1
+mov a,b
+cpi 00
+jnz l1
+dcx d
+mov a,e
+cpi 00h
+jnz l2
+mov a,d
+cpi 00h
+jnz l2
+shld 0000h
+hlt
